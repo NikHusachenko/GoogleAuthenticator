@@ -4,9 +4,9 @@
             <h1 class="form-text">Sing up</h1>
         </div>
         <div class="card-body">
-            <form class="row" asp-action="defaultsignin" asp-controller="authentication">
+            <form class="row" asp-action="DefaultSignUp" asp-controller="authentication">
                 <h5 class="form-text mt-1">Login</h5>
-                <input type="text" name="login" class="form-control mb-1" />
+                <input type="text" name="username" class="form-control mb-1" />
                 
                 <h5 class="form-text mt-1">Password</h5>
                 <input type="password" name="password" class="form-control mb-1" />
@@ -16,11 +16,12 @@
         </div>
         <div class="card-footer">
             <div class="row">
-                <form class="col" asp-action="googlesignin" asp-controller="authentication">
-                    <input type="submit" class="btn btn-secondary" value="With Google" />
+                <label class="form-text">Continue with:</label>
+                <form class="col" asp-action="ExternalLogin" asp-controller="authentication">
+                    <input type="submit" class="btn btn-secondary" name="provider" value="Google" />
                 </form>
-                <form class="col" asp-action="facebooksignin" asp-controller="authentication">
-                    <input type="submit" class="btn btn-secondary float-end" value="With Facebook" />
+                <form class="col" asp-action="ExternalLogin" asp-controller="authentication">
+                    <input type="submit" class="btn btn-secondary float-end" value="Facebook" />
                 </form>
             </div>
         </div>
